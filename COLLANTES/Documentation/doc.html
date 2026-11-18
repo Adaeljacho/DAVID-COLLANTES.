@@ -1,0 +1,858 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Helen - Personal Portfolio Template Documentation</title>
+<!-- Google Font - Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Helen Personal Portfolio & CV HTML Template documentation, installation guide, customization instructions, features, credits, and support information.">
+    <meta name="keywords" content="Helen, Personal Portfolio Template, CV HTML Template, Portfolio HTML Template, Resume Template, Creative Portfolio, Bootstrap Portfolio, HTML5 CSS3 Template">
+    <meta name="author" content="Helen">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    color: #333;
+    background: #f7f7f7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: flex;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: #fff;
+            padding: 25px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 8px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 7px 10px;
+            color: #444;
+        }
+
+        .sidebar a:hover {
+            background: #f2f2f2;
+            text-decoration: none;
+        }
+
+        .content {
+            flex: 1;
+            background: #fff;
+            padding: 45px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .header {
+            padding-bottom: 30px;
+            margin-bottom: 35px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header h1 {
+            margin: 0 0 10px;
+            font-size: 36px;
+            color: #222;
+        }
+
+        .header p {
+            margin: 0;
+            color: #666;
+            font-size: 16px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 27px;
+            color: #222;
+            margin-top: 0;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: #333;
+            margin-top: 25px;
+        }
+
+        p {
+            margin: 0 0 15px;
+        }
+
+        ul,
+        ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 7px;
+        }
+
+        code {
+            font-family: Consolas, Monaco, monospace;
+            background: #f1f1f1;
+            padding: 3px 6px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 20px;
+            overflow-x: auto;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .note {
+            background: #fff8e1;
+            border-left: 4px solid #f0ad4e;
+            padding: 15px 18px;
+            margin: 20px 0;
+        }
+
+        .success {
+            background: #eef8ee;
+            border-left: 4px solid #5cb85c;
+            padding: 15px 18px;
+            margin: 20px 0;
+        }
+
+        .feature-list {
+            columns: 2;
+            column-gap: 50px;
+        }
+
+        .footer {
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #777;
+        }
+
+        @media (max-width: 900px) {
+            .wrapper {
+                display: block;
+            }
+
+            .sidebar {
+                width: 100%;
+                position: static;
+                margin-bottom: 25px;
+            }
+
+            .content {
+                padding: 30px;
+            }
+
+            .feature-list {
+                columns: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .wrapper {
+                margin: 15px auto;
+                padding: 0 10px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Documentation</h2>
+
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#structure">Folder Structure</a></li>
+            <li><a href="#customization">Customization</a></li>
+            <li><a href="#content">Text &amp; Content</a></li>
+            <li><a href="#images">Images</a></li>
+            <li><a href="#logo">Logo</a></li>
+            <li><a href="#colors">Colors &amp; Styles</a></li>
+            <li><a href="#fonts">Fonts</a></li>
+            <li><a href="#icons">Icons</a></li>
+            <li><a href="#javascript">JavaScript &amp; jQuery</a></li>
+            <li><a href="#seo">SEO</a></li>
+            <li><a href="#browser">Browser Compatibility</a></li>
+            <li><a href="#credits">Credits</a></li>
+            <li><a href="#support">Support</a></li>
+            <li><a href="#note">Important Note</a></li>
+        </ul>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <!-- Header -->
+        <div class="header">
+            <h1>Helen - Personal Portfolio Template</h1>
+
+            <p>
+                Documentation for Helen - Personal Portfolio &amp; CV HTML Template.
+            </p>
+        </div>
+
+
+        <!-- Introduction -->
+        <section id="introduction">
+            <h2>1. Introduction</h2>
+
+            <p>
+                Thank you for choosing <strong>Helen - Personal Portfolio Template</strong>.
+            </p>
+
+            <p>
+                Helen is a fresh, clean, and modern
+                <strong>Personal Portfolio &amp; CV HTML Template</strong>
+                designed for creative professionals, agencies, freelancers,
+                and businesses.
+            </p>
+
+            <p>
+                This responsive portfolio template is ideal for personal portfolios,
+                creative agencies, architects, photography studios, musicians,
+                sound and music websites, painters, artists, illustrators,
+                trainers, freelancers, web designers, and creative project showcases.
+            </p>
+
+            <p>
+                Choose the layout that best suits your needs, replace the demo text
+                with your own content, add your images, and your professional
+                portfolio website is ready to launch.
+            </p>
+
+            <p>
+                Helen is built with a clean and professional design, responsive layouts,
+                SEO-friendly code, and easy customization in mind. We also provide a
+                dedicated support team available 24/7 to help you with any questions
+                or issues.
+            </p>
+        </section>
+
+
+        <!-- Features -->
+        <section id="features">
+            <h2>2. Features</h2>
+
+            <ul class="feature-list">
+                <li>Bootstrap Framework</li>
+                <li>Clean and Modern Light Version</li>
+                <li>Clean and Professional Portfolio Design</li>
+                <li>Cross-Browser Compatible</li>
+                <li>Fully Responsive Design</li>
+                <li>SEO-Friendly HTML Structure</li>
+                <li>Clean and Well-Organized Code</li>
+                <li>Google Web Fonts</li>
+                <li>JavaScript with jQuery Library</li>
+                <li>Valid HTML5 &amp; CSS3</li>
+                <li>Easy to Customize</li>
+                <li>Well Documented</li>
+                <li>24/7 Customer Support</li>
+            </ul>
+        </section>
+
+
+        <!-- Requirements -->
+        <section id="requirements">
+            <h2>3. Requirements</h2>
+
+            <p>
+                Helen is a static HTML template, so no database or server-side
+                installation is required.
+            </p>
+
+            <ul>
+                <li>A modern web browser</li>
+                <li>A code editor such as Visual Studio Code, Sublime Text, or Notepad++</li>
+                <li>Basic knowledge of HTML and CSS</li>
+                <li>Basic knowledge of JavaScript/jQuery for advanced customization</li>
+                <li>A web server or hosting account for publishing the website online</li>
+            </ul>
+        </section>
+
+
+        <!-- Installation -->
+        <section id="installation">
+            <h2>4. Installation</h2>
+
+            <p>
+                Follow the steps below to install and use the Helen template.
+            </p>
+
+            <h3>Step 1: Extract the Package</h3>
+
+            <p>
+                Extract the downloaded ZIP file on your computer.
+            </p>
+
+            <h3>Step 2: Open the Template</h3>
+
+            <p>
+                Open the extracted template folder using your preferred code editor.
+            </p>
+
+            <h3>Step 3: Customize the Template</h3>
+
+            <p>
+                Edit the HTML, CSS, and JavaScript files according to your requirements.
+            </p>
+
+            <h3>Step 4: Preview the Website</h3>
+
+            <p>
+                Open the main HTML file in your browser to preview your website.
+            </p>
+
+            <h3>Step 5: Upload to Your Server</h3>
+
+            <p>
+                When customization is complete, upload the template files to your
+                hosting server using an FTP client or your hosting file manager.
+            </p>
+        </section>
+
+
+        <!-- Folder Structure -->
+        <section id="structure">
+            <h2>5. Folder Structure</h2>
+
+            <p>
+                The template files are organized into separate folders for easy
+                management and customization.
+            </p>
+
+<pre>Helen/
+│
+├── index.html
+├── assets/
+│   ├── css/
+│   ├── js/
+│   ├── images/
+│   └── fonts/
+│
+└── documentation/
+</pre>
+
+            <div class="note">
+                <strong>Note:</strong>
+                The exact file and folder names may vary depending on the
+                version of the template package.
+            </div>
+        </section>
+
+
+        <!-- Customization -->
+        <section id="customization">
+            <h2>6. Customization</h2>
+
+            <p>
+                Helen has been developed with easy customization in mind.
+                You can customize the main website content directly from the
+                HTML files.
+            </p>
+
+            <p>
+                For styling and design changes, use the CSS files located inside
+                the <code>assets/css</code> folder.
+            </p>
+
+            <p>
+                For JavaScript functionality and interactive elements, use the
+                JavaScript files located inside the <code>assets/js</code> folder.
+            </p>
+
+            <div class="note">
+                <strong>Tip:</strong>
+                Always keep a backup of the original files before making
+                major changes.
+            </div>
+        </section>
+
+
+        <!-- Text & Content -->
+        <section id="content">
+            <h2>7. Changing Text &amp; Content</h2>
+
+            <p>
+                To change the text displayed on your website, open the relevant
+                HTML file and locate the text you want to modify.
+            </p>
+
+<pre>&lt;h1&gt;Your Name&lt;/h1&gt;
+&lt;p&gt;Your professional description goes here.&lt;/p&gt;
+</pre>
+
+            <p>
+                Replace the demo content with your own information.
+            </p>
+
+            <ul>
+                <li>Your name</li>
+                <li>Job title</li>
+                <li>About information</li>
+                <li>Skills</li>
+                <li>Services</li>
+                <li>Portfolio information</li>
+                <li>Contact information</li>
+                <li>Social media links</li>
+                <li>Other website content</li>
+            </ul>
+        </section>
+
+
+        <!-- Images -->
+        <section id="images">
+            <h2>8. Changing Images</h2>
+
+            <p>
+                You can replace the demo images with your own images.
+            </p>
+
+            <h3>Steps</h3>
+
+            <ol>
+                <li>Open the <code>assets/images</code> folder.</li>
+                <li>Add your new image.</li>
+                <li>Find the corresponding image reference in the HTML file.</li>
+                <li>Replace the existing image path with your new image path.</li>
+            </ol>
+
+<pre>&lt;img src="assets/images/your-image.jpg" alt="Your Name"&gt;
+</pre>
+
+            <h3>Image Recommendation</h3>
+
+            <p>
+                For better website performance, use optimized images in appropriate
+                formats such as JPG, PNG, or WebP where applicable.
+            </p>
+
+            <p>
+                Use descriptive <code>alt</code> attributes for images to improve
+                accessibility and SEO.
+            </p>
+        </section>
+
+
+        <!-- Logo -->
+        <section id="logo">
+            <h2>9. Changing Logo</h2>
+
+            <p>
+                To change the website logo, locate the logo image or logo markup
+                in the relevant HTML file.
+            </p>
+
+<pre>&lt;img src="assets/images/logo.png" alt="Helen"&gt;
+</pre>
+
+            <p>
+                Replace <code>logo.png</code> with your own logo file.
+            </p>
+
+            <p>
+                If the template uses text-based branding, simply replace the
+                existing text with your preferred website or personal brand name.
+            </p>
+        </section>
+
+
+        <!-- Colors -->
+        <section id="colors">
+            <h2>10. Changing Colors &amp; Styles</h2>
+
+            <p>
+                The visual appearance of Helen can be customized through the
+                CSS files.
+            </p>
+
+            <p>
+                Locate the main stylesheet inside:
+            </p>
+
+<pre>assets/css/</pre>
+
+            <p>
+                Search for the relevant CSS selectors and modify the values
+                according to your design requirements.
+            </p>
+
+            <ul>
+                <li>Background colors</li>
+                <li>Text colors</li>
+                <li>Button colors</li>
+                <li>Typography</li>
+                <li>Spacing</li>
+                <li>Borders</li>
+                <li>Hover effects</li>
+                <li>Font sizes</li>
+            </ul>
+
+            <div class="note">
+                <strong>Tip:</strong>
+                Keep a backup copy of the original CSS file before making
+                significant changes.
+            </div>
+        </section>
+
+
+        <!-- Fonts -->
+        <section id="fonts">
+            <h2>11. Fonts</h2>
+
+            <p>
+                Helen uses <strong>Google Fonts</strong> for typography.
+            </p>
+
+            <p>
+                You can change the font by updating the Google Fonts reference
+                in the HTML file or modifying the corresponding CSS
+                <code>font-family</code> declaration.
+            </p>
+
+<pre>body {
+    font-family: 'Your Font', sans-serif;
+}</pre>
+        </section>
+
+
+        <!-- Icons -->
+        <section id="icons">
+            <h2>12. Icons</h2>
+
+            <p>
+                Helen uses <strong>Font Awesome</strong> icons.
+            </p>
+
+            <p>
+                You can change an icon by replacing the relevant Font Awesome class.
+            </p>
+
+<pre>&lt;i class="fa fa-user"&gt;&lt;/i&gt;</pre>
+        </section>
+
+
+        <!-- JavaScript -->
+        <section id="javascript">
+            <h2>13. JavaScript &amp; jQuery</h2>
+
+            <p>
+                Helen uses JavaScript and the jQuery library for interactive
+                functionality.
+            </p>
+
+            <p>
+                JavaScript files are located inside:
+            </p>
+
+<pre>assets/js/</pre>
+
+            <p>
+                The template includes jQuery-based functionality where required.
+            </p>
+
+            <div class="note">
+                If you are not familiar with JavaScript or jQuery, we recommend
+                keeping the original JavaScript files unchanged unless you
+                understand the code you are modifying.
+            </div>
+        </section>
+
+
+        <!-- SEO -->
+        <section id="seo">
+            <h2>14. SEO &amp; Performance</h2>
+
+            <p>
+                Helen follows a clean HTML structure and is designed with
+                SEO-friendly markup in mind.
+            </p>
+
+            <p>
+                For the best SEO results after customization, we recommend:
+            </p>
+
+            <ul>
+                <li>Use descriptive page titles.</li>
+                <li>Add relevant meta descriptions.</li>
+                <li>Use meaningful heading tags.</li>
+                <li>Add descriptive <code>alt</code> text to images.</li>
+                <li>Use clean and descriptive URLs.</li>
+                <li>Keep images optimized.</li>
+                <li>Replace all demo content with original content.</li>
+                <li>Submit your website to relevant search engine tools after launch.</li>
+            </ul>
+
+            <p>
+                Please note that an SEO-friendly template structure alone does
+                not guarantee search engine rankings. Website content, technical
+                SEO, performance, backlinks, and overall SEO strategy can also
+                affect search visibility.
+            </p>
+        </section>
+
+
+        <!-- Browser Compatibility -->
+        <section id="browser">
+            <h2>15. Browser Compatibility</h2>
+
+            <p>
+                Helen is designed to work across modern web browsers.
+            </p>
+
+            <ul>
+                <li>Google Chrome</li>
+                <li>Mozilla Firefox</li>
+                <li>Microsoft Edge</li>
+                <li>Safari</li>
+                <li>Opera</li>
+            </ul>
+
+            <p>
+                For the best experience, we recommend using the latest stable
+                version of your preferred browser.
+            </p>
+        </section>
+
+
+        <!-- Credits -->
+        <section id="credits">
+            <h2>16. Credits</h2>
+
+            <h3>jQuery</h3>
+
+            <p>
+                <a href="http://jquery.com/" target="_blank" rel="noopener">
+                    jQuery
+                </a>
+            </p>
+
+            <p>
+                jQuery is used for JavaScript functionality and interactive features.
+            </p>
+
+            <h3>Bootstrap</h3>
+
+            <p>
+                <a href="http://getbootstrap.com/" target="_blank" rel="noopener">
+                    Bootstrap
+                </a>
+            </p>
+
+            <p>
+                Bootstrap is used as the responsive front-end framework.
+            </p>
+
+            <h3>Images Credits</h3>
+
+            <p>
+                Demo images are sourced from:
+                <a href="http://pexels.com/" target="_blank" rel="noopener">
+                    Pexels
+                </a>
+            </p>
+
+            <h3>Icons Credits</h3>
+
+            <p>
+                Icons are provided by:
+                <a href="http://fortawesome.github.io/Font-Awesome/"
+                   target="_blank"
+                   rel="noopener">
+                    Font Awesome
+                </a>
+            </p>
+
+            <h3>Fonts Credits</h3>
+
+            <p>
+                Fonts are provided through:
+                <a href="https://fonts.google.com/"
+                   target="_blank"
+                   rel="noopener">
+                    Google Fonts
+                </a>
+            </p>
+        </section>
+
+
+        <!-- Support -->
+        <section id="support">
+            <h2>17. Support</h2>
+
+            <p>
+                We provide a dedicated support team to help you with questions
+                and issues related to the template.
+            </p>
+
+            <p>
+                Before contacting support, please make sure that:
+            </p>
+
+            <ul>
+                <li>You are using the latest version of the template.</li>
+                <li>You have checked this documentation.</li>
+                <li>You have not removed required template files.</li>
+                <li>You have not made changes that may have caused the issue.</li>
+            </ul>
+
+            <div class="success">
+                <strong>24/7 Support:</strong>
+                Our support team is available to assist you with
+                template-related questions and issues.
+            </div>
+
+            <p>
+                For customization beyond the original template functionality,
+                additional development work may be required.
+            </p>
+        </section>
+
+
+        <!-- Important Note -->
+        <section id="note">
+            <h2>18. Important Note</h2>
+
+            <div class="note">
+                <strong>Note:</strong>
+                The images included in the live/demo preview are for
+                demonstration purposes only and are not included in the
+                download bundle.
+            </div>
+
+            <p>
+                Please replace the demo images with your own licensed images
+                before publishing your website.
+            </p>
+        </section>
+
+
+        <!-- Thank You -->
+        <section>
+            <h2>19. Thank You</h2>
+
+            <p>
+                Thank you for choosing
+                <strong>Helen - Personal Portfolio Template</strong>.
+            </p>
+
+            <p>
+                We hope Helen helps you create a beautiful, modern, and
+                professional portfolio website.
+            </p>
+
+            <p>
+                <strong>
+                    If you like our work, don't forget to rate us 5 stars and
+                    share your valuable feedback. Your feedback helps us improve
+                    our templates and provide better updates.
+                </strong>
+            </p>
+
+            <p>
+                We appreciate your support!
+            </p>
+        </section>
+
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>
+                &copy; 2026 Helen - Personal Portfolio Template.
+                All Rights Reserved.
+            </p>
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
+
